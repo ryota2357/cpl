@@ -4,7 +4,7 @@ import {
   BaseKind,
   DduItem,
 } from "https://deno.land/x/ddu_vim@v1.8.7/types.ts";
-import { Denops } from "https://deno.land/x/ddu_vim@v1.8.7/deps.ts";
+import { Denops, fn } from "https://deno.land/x/ddu_vim@v1.8.7/deps.ts";
 import { ActionData } from "../@ddu-sources/cpl.ts";
 
 type Params = Record<never, never>;
@@ -20,7 +20,8 @@ export class Kind extends BaseKind<Params> {
         if (line == "//[START]") start = i + 1;
         if (line == "//[END]") end = i;
       }
-      await args.denops.call("cpl#paste", text.slice(start, end));
+      const line = await fn.line(args.denops, ".");
+      fn.append(args.denops, line, text.slice(start, end));
       return ActionFlags.None;
     },
   };

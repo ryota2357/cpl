@@ -17,8 +17,8 @@ export class Kind extends BaseKind<Params> {
       let start = 0, end = text.length;
       for (let i = 0; i < text.length; i++) {
         const line = text[i].replace(/ /g, "");
-        if (line == "//[START]") start = i + 1;
-        if (line == "//[END]") end = i;
+        if (line === "//[START]") start = i + 1;
+        if (line === "//[END]") end = i;
       }
       const line = await fn.line(args.denops, ".");
       fn.append(args.denops, line, text.slice(start, end));

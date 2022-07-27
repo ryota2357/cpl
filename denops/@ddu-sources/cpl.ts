@@ -25,8 +25,8 @@ export class Source extends BaseSource<Params> {
         const items: Item<ActionData>[] = [];
         try {
           for await (const entry of Deno.readDir(root)) {
-            if (entry.isDirectory == false) continue;
-            if (entry.name[0] == "_") continue;
+            if (entry.isDirectory === false) continue;
+            if (entry.name[0] === "_") continue;
             items.push({
               word: entry.name,
               action: {

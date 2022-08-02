@@ -1,3 +1,6 @@
+#ifndef LIB_TEMPLATE
+#define LIB_TEMPLATE
+
 // [START]
 /*{{{ author: ryota2357, modified: 2022/07/24 */
 #include <algorithm>
@@ -99,8 +102,10 @@ using pint = std::pair<int, int>;
 #define rep(i, a, b) for (ll i = a; i < ll(b); ++i)
 #define repr(i, a, b) for (ll i = a; i >= ll(b); --i)
 #define each(x, v) for (auto& x : v)
-#define ALL(x) x.begin(), x.end()
-#define ALLR(x) x.rbegin(), x.rend()
+#define All(x) x.begin(), x.end()
+#define AllR(x) x.rbegin(), x.rend()
+#define Sort(x) sort(x.begin(), x.end())
+#define SortR(x) sort(x.rbegin(), x.rend())
 #define Unique(x)             \
     sort(x.begin(), x.end()); \
     x.erase(unique(x.begin(), x.end()), x.end())
@@ -113,3 +118,5 @@ using namespace ryota2357;
 
 // using namespace ryota2357::debug;
 // [END]
+
+#endif

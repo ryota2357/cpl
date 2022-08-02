@@ -2,7 +2,7 @@
 #define LIB_TEMPLATE
 
 // [START]
-/*{{{ author: ryota2357, modified: 2022/07/24 */
+/*{{{ author: ryota2357, modified: 2022/08/02 */
 #include <algorithm>
 #include <cassert>
 #include <cmath>

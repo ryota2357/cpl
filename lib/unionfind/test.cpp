@@ -1,8 +1,8 @@
 #include "index.cpp"
-
-#define eq(actual, expect) assert(actual == expect)
+#include "../_test_util/util.cpp"
 
 int main() {
+    test::Start("unionfind");
     {
         UnionFind uf(2);
         eq(uf.same(0, 1), false);
@@ -29,5 +29,5 @@ int main() {
         }
         eq(uf.size(0), n);
     }
-    return 0;
+    test::Finish();
 }

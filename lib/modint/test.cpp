@@ -1,10 +1,10 @@
 #include "index.cpp"
-
-#define eq(actual, expect) assert(actual == expect)
+#include "../_test_util/util.cpp"
 
 using mint = ModInt<1000000007>;
 
 int main() {
+    test::Start("modint");
     { /* construct */
         mint a; eq(a.value, 0);
         mint b = 1000000007; eq(b.value, 0);
@@ -43,12 +43,13 @@ int main() {
         mint d = 20; eq(d * 10, 200);
     }
     { /* div */
-        ;
+        test::Require("div()");
     }
     { /* pow */
-        ;
+        test::Require("pow()");
     }
     { /* inv */
-        ;
+        test::Require("inv()");
     }
+    test::Finish();
 }

@@ -1,6 +1,6 @@
 #include "../template/index.cpp"
 
-//[LIB START]
+// [START]
 template <ll Modulus>
 struct ModInt
 {

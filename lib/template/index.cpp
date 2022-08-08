@@ -110,8 +110,8 @@ using pint = std::pair<int, int>;
     sort(x.begin(), x.end()); \
     x.erase(unique(x.begin(), x.end()), x.end())
 #define Fill(v, n) fill(v, v + sizeof(v) / sizeof(*v), n)
-#define INF = 1073741823;
-#define INFL = 2305843009213693951ll;
+#define INF 1073741823
+#define INFL 2305843009213693951ll
 using namespace std;
 using namespace ryota2357;
 /*}}}*/

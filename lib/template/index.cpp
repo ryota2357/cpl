@@ -74,23 +74,40 @@ inline T min(const std::vector<T>& v) { return *min_element(v.begin(), v.end());
 
 namespace debug
 {
-void Write(void) { std::cerr << std::endl; }
+bool _USE_DEBUG_ = false;
+void _DEBUG_PRINT_() {
+    if (_USE_DEBUG_) return;
+    _USE_DEBUG_ = true;
+    std::cout << "\033[33m[Debug Mode]\033[m" << std::endl;
+}
+void Write(void) {
+    _DEBUG_PRINT_();
+    std::cerr << std::endl;
+}
 template <class T, class U>
-void Write(const std::pair<T, U>& p) { std::cerr << ' ' << '{' << p.first << ',' << p.second << '}' << std::endl; }
+void Write(const std::pair<T, U>& p) {
+    _DEBUG_PRINT_();
+    std::cerr << ' ' << '{' << p.first << ',' << p.second << '}' << std::endl;
+}
 template <class T>
 void Write(const std::vector<T>& V, int n = -1) {
+    _DEBUG_PRINT_();
     if (n < 0) n = V.size();
+    std::cerr << " [";
     for (int i = 0; i < n; ++i) std::cerr << ' ' << V[i];
-    std::cerr << std::endl;
+    std::cerr << " ]" << std::endl;
 }
 template <class T, class U>
 void Write(const std::vector<std::pair<T, U>>& V, int n = -1) {
+    _DEBUG_PRINT_();
     if (n < 0) n = V.size();
+    std::cerr << " [";
     for (int i = 0; i < n; ++i) std::cerr << " {" << V[i].first << ',' << V[i].second << '}';
-    std::cerr << std::endl;
+    std::cerr << " ]" << std::endl;
 }
 template <class T, class... U>
 void Write(const T& t, const U&... u) {
+    _DEBUG_PRINT_();
     std::cerr << ' ' << t;
     Write(u...);
 }

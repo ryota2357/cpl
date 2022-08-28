@@ -5,7 +5,7 @@ template <ll Modulus>
 struct ModInt
 {
     ll value;
-    ModInt(const ll value = 0) noexcept : value((value % Modulus + Modulus) % Modulus) {}
+    constexpr ModInt(const ll value = 0) noexcept : value((value % Modulus + Modulus) % Modulus) {}
     inline ModInt& operator+=(const ModInt& rhs) noexcept {
         if (value += rhs.value, value >= Modulus) value -= Modulus;
         return *this;

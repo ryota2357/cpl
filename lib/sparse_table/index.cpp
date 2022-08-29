@@ -1,4 +1,10 @@
+#ifndef LIB_TEMPLATE
 #include "../template/index.cpp"
+#endif
+
+#ifndef LIB_SPARSE_TABLE
+#define LIB_SPARSE_TABLE
+
 // [START]
 template <class T, const T& (*op)(const T&, const T&)>
 struct SparseTable
@@ -24,6 +30,8 @@ struct SparseTable
     }
 };
 // [END]
+
+#endif
 
 /* https://atcoder.jp/contests/abc263/tasks/abc263_d
 int main() {

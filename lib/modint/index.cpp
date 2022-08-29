@@ -1,4 +1,9 @@
+#ifndef LIB_TEMPLATE
 #include "../template/index.cpp"
+#endif
+
+#ifndef LIB_MODINT
+#define LIB_MODINT
 
 // [START]
 template <ll Modulus>
@@ -71,3 +76,6 @@ struct ModInt
     friend inline istream& operator>>(istream& is, ModInt& x) noexcept { return is >> x.value; }
     friend inline ostream& operator<<(ostream& os, const ModInt& x) noexcept { return os << x.value; }
 };
+// [END]
+
+#endif

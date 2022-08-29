@@ -1,4 +1,9 @@
+#ifndef LIB_TEMPLATE
 #include "../template/index.cpp"
+#endif
+
+#ifndef LIB_PRIME_SIEVE
+#define LIB_PRIME_SIEVE
 
 // [START]
 struct PrimeSieve
@@ -60,3 +65,5 @@ struct PrimeSieve
     }
 };
 // [END]
+
+#endif

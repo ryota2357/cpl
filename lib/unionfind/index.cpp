@@ -1,4 +1,9 @@
+#ifndef LIB_TEMPLATE
 #include "../template/index.cpp"
+#endif
+
+#ifndef LIB_UNIONFIND
+#define LIB_UNIONFIND
 
 // [START]
 struct UnionFind
@@ -23,3 +28,5 @@ struct UnionFind
     inline int size(const int& x) { return -data[root(x)]; }
 };
 // [END]
+
+#endif

@@ -1,10 +1,5 @@
-#ifndef LIB_TEMPLATE
 #include "../template/index.cpp"
-#endif
-
-#ifndef LIB_VECTOR2
 #include "../vector2/index.cpp"
-#endif
 
 #ifndef LIB_VECTOR2_POLYGON_AREA
 #define LIB_VECTOR2_POLYGON_AREA

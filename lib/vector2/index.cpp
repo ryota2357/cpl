@@ -1,6 +1,4 @@
-#ifndef LIB_TEMPLATE
 #include "../template/index.cpp"
-#endif
 
 #ifndef LIB_VECTOR2
 #define LIB_VECTOR2

@@ -1,10 +1,5 @@
-#ifndef LIB_TEMPLATE
 #include "../template/index.cpp"
-#endif
-
-#ifndef LIB_VECTOR2
 #include "../vector2/index.cpp"
-#endif
 
 #ifndef LIB_VECTOR2_CCW
 #define LIB_VECTOR2_CCW
@@ -31,17 +26,3 @@ int ccw(const Vector2& a, const Vector2& b, const Vector2& c) {
 // [END]
 
 #endif
-
-/* https://atcoder.jp/contests/abc266/tasks/abc266_c
-int main() {
-    vector<Vector2> v(4); IN(v);
-    rep(i, 0, 4) {
-        if(ccw(v[i], v[(i+1)%4], v[(i+2)%4]) == -1) {
-            OUT("No");
-            return 0;
-        }
-    }
-    OUT("Yes");
-    return 0;
-}
-*/

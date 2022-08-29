@@ -1,6 +1,4 @@
-#ifndef LIB_TEMPLATE
 #include "../template/index.cpp"
-#endif
 
 #ifndef LIB_UNIONFIND
 #define LIB_UNIONFIND

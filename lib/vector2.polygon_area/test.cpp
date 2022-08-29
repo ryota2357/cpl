@@ -9,7 +9,6 @@
 
 int main() {
     test::Start("vector2.polygon_area");
-        test::Require("All");
     { /* 1, 2 */
         vector<Vector2> a = { {1, 1} };
         eq_esp(polygonArea(a), 0);

@@ -91,6 +91,13 @@ void Write(const std::pair<T, U>& p) {
     std::cerr << ' ' << '{' << p.first << ',' << p.second << '}' << std::endl;
 }
 template <class T>
+void Write(const std::set<T>& V) {
+    _DEBUG_PRINT_();
+    std::cerr << " {";
+    for (const auto& v : V) std::cerr << ' ' << v;
+    std::cerr << " }" << std::endl;
+}
+template <class T>
 void Write(const std::vector<T>& V, int n = -1) {
     _DEBUG_PRINT_();
     if (n < 0) n = V.size();

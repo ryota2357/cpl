@@ -21,21 +21,21 @@ string yellow(string msg) { return "\033[33m" + msg + "\033[m"; }
 string cyan(string msg) { return "\033[36m" + msg + "\033[m"; }
 }  // namespace color
 
-int _sucsessCnt = 0;
-int _faildCnt = 0;
+int _successCnt = 0;
+int _failedCnt = 0;
 const string indent = "  ";
 
 template <class T, class U, class V>
 void Equal(T actual, U expect, int line, V msg = "") {
     if (actual != expect) {
-        cout << indent + color::red("Faild")
+        cout << indent + color::red("Failed")
              << " line: " << line
              << " (actual:" << actual << " / expect: " << expect << ")"
              << " " << msg << '\n';
-        _faildCnt++;
+        _failedCnt++;
     }
     else {
-        _sucsessCnt++;
+        _successCnt++;
     }
 }
 
@@ -45,15 +45,15 @@ void Require(string msg) {
 
 void Start(string name) {
     cout << color::cyan("> " + name) << '\n';
-    _sucsessCnt = 0;
-    _faildCnt = 0;
+    _successCnt = 0;
+    _failedCnt = 0;
 }
 
 void Finish() {
-    cout << indent + color::green("[Pass] ") << _sucsessCnt;
-    if (_faildCnt) {
+    cout << indent + color::green("[Pass] ") << _successCnt;
+    if (_failedCnt) {
         cout << '\n'
-             << indent + color::red("[Faild] ") << _faildCnt;
+             << indent + color::red("[Failed] ") << _failedCnt;
     }
     cout << endl;
 }

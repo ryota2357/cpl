@@ -71,7 +71,12 @@ struct ModInt
     friend inline ModInt operator/(const ModInt& lhs, const ModInt& rhs) noexcept { return ModInt(lhs) /= rhs; }
     friend inline bool operator==(const ModInt& lhs, const ModInt& rhs) noexcept { return lhs.value == rhs.value; }
     friend inline bool operator!=(const ModInt& lhs, const ModInt& rhs) noexcept { return lhs.value != rhs.value; }
-    friend inline istream& operator>>(istream& is, ModInt& x) noexcept { return is >> x.value; }
+    friend inline istream& operator>>(istream& is, ModInt& x) noexcept {
+        ll val;
+        is >> val;
+        x = val;
+        return is;
+    }
     friend inline ostream& operator<<(ostream& os, const ModInt& x) noexcept { return os << x.value; }
 };
 // [END]

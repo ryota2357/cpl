@@ -3,8 +3,8 @@ import {
   Actions,
   BaseKind,
   DduItem,
-} from "https://deno.land/x/ddu_vim@v2.2.0/types.ts";
-import { Denops, fn } from "https://deno.land/x/ddu_vim@v2.2.0/deps.ts";
+} from "https://deno.land/x/ddu_vim@v2.3.0/types.ts";
+import { Denops, fn } from "https://deno.land/x/ddu_vim@v2.3.0/deps.ts";
 import { ActionData } from "../@ddu-sources/cpl.ts";
 
 type Params = Record<never, never>;
@@ -21,7 +21,7 @@ export class Kind extends BaseKind<Params> {
         if (line === "//[END]") end = i;
       }
       const line = await fn.line(args.denops, ".");
-      fn.append(args.denops, line, text.slice(start, end));
+      fn.append(args.denops, line, [...text.slice(start, end), ""]);
       return ActionFlags.None;
     },
   };

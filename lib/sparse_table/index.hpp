@@ -1,7 +1,6 @@
-#include "../template/index.cpp"
+#pragma once
 
-#ifndef LIB_SPARSE_TABLE
-#define LIB_SPARSE_TABLE
+#include "../template/index.hpp"
 
 // [START]
 template <class T, const T& (*op)(const T&, const T&)>
@@ -28,5 +27,3 @@ struct SparseTable
     }
 };
 // [END]
-
-#endif

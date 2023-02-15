@@ -1,8 +1,7 @@
-#include "../template/index.cpp"
-#include "../vector2/index.cpp"
+#pragma once
 
-#ifndef LIB_VECTOR2_POLYGON_AREA
-#define LIB_VECTOR2_POLYGON_AREA
+#include "../template/index.hpp"
+#include "../vector2/index.hpp"
 
 // 参考: https://imagingsolution.net/math/calc_n_point_area/
 
@@ -15,5 +14,3 @@ long double polygonArea(const vector<Vector2>& vertices) {
     return abs(ret) / 2;
 }
 // [END]
-
-#endif

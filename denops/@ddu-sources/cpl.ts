@@ -32,7 +32,7 @@ export class Source extends BaseSource<Params> {
               action: {
                 item: {
                   name: entry.name,
-                  path: join(root, entry.name, "index.cpp"),
+                  path: join(root, entry.name, "index.hpp"),
                 },
               },
             });

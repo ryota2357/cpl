@@ -1,7 +1,6 @@
-#include "../template/index.cpp"
+#pragma once
 
-#ifndef LIB_MODINT
-#define LIB_MODINT
+#include "../template/index.hpp"
 
 // [START]
 template <ll Modulus>
@@ -80,5 +79,3 @@ struct ModInt
     friend inline ostream& operator<<(ostream& os, const ModInt& x) noexcept { return os << x.value; }
 };
 // [END]
-
-#endif

@@ -1,8 +1,7 @@
-#include "../template/index.cpp"
-#include "../vector2/index.cpp"
+#pragma once
 
-#ifndef LIB_VECTOR2_CCW
-#define LIB_VECTOR2_CCW
+#include "../template/index.hpp"
+#include "../vector2/index.hpp"
 
 // 参考: https://sen-comp.hatenablog.com/entry/2020/03/12/145742#iSP3点の位置関係
 
@@ -24,5 +23,3 @@ int ccw(const Vector2& a, const Vector2& b, const Vector2& c) {
     return 0;
 }
 // [END]
-
-#endif

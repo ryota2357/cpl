@@ -1,4 +1,4 @@
-#include "index.cpp"
+#include "index.hpp"
 #include "../_test_util/util.cpp"
 
 int int_min(int a, int b) {

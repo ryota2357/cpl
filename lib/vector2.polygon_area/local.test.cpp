@@ -1,6 +1,5 @@
-#include <vector>
 #include "../_test_util/util.cpp"
-#include "index.cpp"
+#include "index.hpp"
 
 #define eq_esp(actual, expect) \
     eq2(sgn(actual - expect), 0, "actual: " + to_string(actual) + " expect: " + to_string(expect))

@@ -1,4 +1,4 @@
-#include "index.cpp"
+#include "index.hpp"
 #include "../_test_util/util.cpp"
 
 const string& f(const string& a, const string& b) {

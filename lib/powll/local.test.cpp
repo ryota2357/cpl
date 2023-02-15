@@ -1,5 +1,5 @@
 #include "../_test_util/util.cpp"
-#include "index.cpp"
+#include "index.hpp"
 
 int main() {
     test::Start("powll");

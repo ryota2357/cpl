@@ -1,7 +1,6 @@
-#include "../template/index.cpp"
+#pragma once
 
-#ifndef LIB_POWLL
-#define LIB_POWLL
+#include "../template/index.hpp"
 
 // [START]
 ll powll(ll x, ll n) {
@@ -14,5 +13,3 @@ ll powll(ll x, ll n) {
     return ret;
 }
 // [END]
-
-#endif

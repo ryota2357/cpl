@@ -1,5 +1,4 @@
-#include <vector>
-#include "index.cpp"
+#include "index.hpp"
 #include "../_test_util/util.cpp"
 
 int main() {

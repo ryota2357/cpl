@@ -1,7 +1,6 @@
-#include "../template/index.cpp"
+#pragma once
 
-#ifndef LIB_TOPOLOGICAL_SORT
-#define LIB_TOPOLOGICAL_SORT
+#include "../template/index.hpp"
 
 // [START]
 vector<int> topologicalSort(const vector<vector<int>>& graph) {
@@ -27,5 +26,3 @@ vector<int> topologicalSort(const vector<vector<int>>& graph) {
     return ret;
 }
 // [END]
-
-#endif

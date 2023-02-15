@@ -1,4 +1,4 @@
-#include "index.cpp"
+#include "index.hpp"
 #include "../_test_util/util.cpp"
 
 using mint = ModInt<1000000007>;

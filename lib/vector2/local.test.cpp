@@ -1,6 +1,5 @@
-#include <string>
 #include "../_test_util/util.cpp"
-#include "index.cpp"
+#include "index.hpp"
 
 #define eqv(actual, expectX, expectY) \
     eq2(sgn((actual).x - (long double)expectX), 0, "x actual: " + to_string((actual).x) + " expect: " + to_string(expectX)); \
@@ -91,5 +90,3 @@ int main() {
     }
     test::Finish();
 }
-
-

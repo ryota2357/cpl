@@ -1,7 +1,6 @@
-#include "../template/index.cpp"
+#pragma once
 
-#ifndef LIB_VECTOR2
-#define LIB_VECTOR2
+#include "../template/index.hpp"
 
 // [START]
 constexpr long double EPS = 0.00000000010;
@@ -49,5 +48,3 @@ struct Vector2
     inline Vector2 rotation(const long double rad) const { return {x * cos(rad) - y * sin(rad), x * sin(rad) + y * cos(rad)}; }
 };
 // [END]
-
-#endif

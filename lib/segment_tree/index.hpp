@@ -1,7 +1,6 @@
-#include "../template/index.cpp"
+#pragma once
 
-#ifndef LIB_SEGMENT_TREE
-#define LIB_SEGMENT_TREE
+#include "../template/index.hpp"
 
 // [START]
 template <class T, T (*op)(T, T), T e>
@@ -59,7 +58,4 @@ struct SegmentTree
         return op(retl, retr);
     }
 };
-
 // [END]
-
-#endif

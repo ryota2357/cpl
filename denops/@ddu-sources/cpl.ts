@@ -1,6 +1,6 @@
-import { BaseSource, Item } from "https://deno.land/x/ddu_vim@v2.7.0/types.ts";
-import { Denops } from "https://deno.land/x/ddu_vim@v2.7.0/deps.ts";
-import { join, resolve } from "https://deno.land/std@0.181.0/path/mod.ts";
+import { BaseSource, Item } from "https://deno.land/x/ddu_vim@v2.8.3/types.ts";
+import { Denops } from "https://deno.land/x/ddu_vim@v2.8.3/deps.ts";
+import { join, resolve } from "https://deno.land/std@0.183.0/path/mod.ts";
 
 type Params = Record<never, never>;
 

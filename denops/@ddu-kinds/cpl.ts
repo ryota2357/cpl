@@ -4,7 +4,7 @@ import {
   BaseKind,
   DduItem,
 } from "https://deno.land/x/ddu_vim@v3.0.0/types.ts";
-import { Denops, fn } from "https://deno.land/x/ddu_vim@v3.0.0/deps.ts";
+import { Denops, fn } from "https://deno.land/x/ddu_vim@v3.0.2/deps.ts";
 import { ActionData } from "../@ddu-sources/cpl.ts";
 
 type Params = Record<never, never>;

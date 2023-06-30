@@ -1,0 +1,7 @@
+name = 'CCW'
+depends = 'Vector2'
+
+[[tests]]
+tester = ''
+input = ''
+expected = ''

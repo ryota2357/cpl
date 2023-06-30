@@ -1,0 +1,6 @@
+name = 'debug'
+
+[[tests]]
+tester = ''
+input = ''
+expected = ''

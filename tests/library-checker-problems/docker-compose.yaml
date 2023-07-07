@@ -1,0 +1,9 @@
+version: "3"
+services:
+    library-checker-problems:
+        build: .
+        volumes:
+            - .:/home
+        container_name: library-checker-problems
+        working_dir: /home
+        command: ruby run.rb

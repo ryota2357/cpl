@@ -2,6 +2,7 @@ import { parse } from "https://deno.land/std@0.193.0/toml/mod.ts";
 import { dirname, join } from "https://deno.land/std@0.192.0/path/mod.ts";
 import { exists } from "https://deno.land/std@0.193.0/fs/mod.ts";
 import { ensure, is } from "https://deno.land/x/unknownutil@v3.2.0/mod.ts";
+import { writeAll } from "https://deno.land/std@0.193.0/streams/mod.ts";
 
 const libPath = Deno.args[0];
 const textDecoder = new TextDecoder("utf-8");
@@ -26,12 +27,7 @@ async function main() {
     const tests = ensure(info["tests"], is.ArrayOf(is.RecordOf(is.String)));
     for (const test of tests) {
       const solver = join(dirname(info_toml), test["solver"]);
-      const cases = join(
-        __dirname,
-        "tests",
-        "cases",
-        ...test["cases"].split("/"),
-      );
+      const cases = join(__dirname, "tests", "cases", test["cases"]);
       const checker = join(
         __dirname,
         "tests",
@@ -60,9 +56,9 @@ async function exec_checker(
   });
   const { code, stdout, stderr } = await command.output();
 
-  console.log(textDecoder.decode(stdout));
+  await writeAll(Deno.stdout, stdout);
   if (code != 0) {
-    console.error(textDecoder.decode(stderr));
+    await writeAll(Deno.stderr, stderr);
     Deno.exit(1);
   }
 }

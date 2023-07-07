@@ -1,1 +1,2 @@
 datastructure/unionfind           unionfind
+datastructure/point_add_range_sum point_add_range_sum

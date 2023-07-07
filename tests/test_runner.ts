@@ -1,5 +1,5 @@
 import { parse } from "https://deno.land/std@0.193.0/toml/mod.ts";
-import { dirname, join } from "https://deno.land/std@0.192.0/path/mod.ts";
+import { dirname, join } from "https://deno.land/std@0.193.0/path/mod.ts";
 import { exists } from "https://deno.land/std@0.193.0/fs/mod.ts";
 import { ensure, is } from "https://deno.land/x/unknownutil@v3.2.0/mod.ts";
 import { writeAll } from "https://deno.land/std@0.193.0/streams/mod.ts";

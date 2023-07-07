@@ -26,9 +26,11 @@ def wa(test_name, test_case)
   print("[#{test_name}] #{File.basename(test_case)}\n")
 end
 
-def ac(test_name)
+def ac(test_name, count)
   fgcolor = '15'
   bgcolor = '34'
+  graycolor = '239'
   print("\e[38;5;#{fgcolor}m\e[48;5;#{bgcolor}m\e[1m AC \e[0m ")
-  print("#{test_name}\n")
+  print(test_name)
+  print(" \e[38;5;#{graycolor}m(#{count} cases)\e[0m\n")
 end

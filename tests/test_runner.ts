@@ -19,6 +19,10 @@ async function main() {
     const info = parse(textDecoder.decode(await Deno.readFile(info_toml)));
 
     const name = ensure(info["name"], is.String);
+    if (!("tests" in info)) {
+      console.error(`No test found: ${name}`);
+      continue;
+    }
     const tests = ensure(info["tests"], is.ArrayOf(is.RecordOf(is.String)));
     for (const test of tests) {
       const solver = join(dirname(info_toml), test["solver"]);

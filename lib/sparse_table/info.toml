@@ -1,1 +1,6 @@
 name = 'Sparse Table'
+
+[[tests]]
+solver = 'solve.cpp'
+cases = 'abc263-d'
+checker = 'padded'

@@ -1,6 +1,6 @@
 name = 'Union Find'
 
 [[tests]]
-tester = ''
-input = ''
-expected = ''
+solver = 'solve.cpp'
+cases = 'unionfind'
+checker = 'padded'

@@ -1,0 +1,6 @@
+name = 'Union Find'
+
+[[tests]]
+solver = 'solve.cpp'
+cases = 'unionfind'
+checker = 'padded'

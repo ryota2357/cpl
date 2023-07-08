@@ -1,0 +1,2 @@
+name = 'Polygon Area'
+depends = 'Vector2'

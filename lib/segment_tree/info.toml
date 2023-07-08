@@ -1,0 +1,6 @@
+name = 'Segment Tree'
+
+[[tests]]
+solver = 'solve.cpp'
+cases = 'point_add_range_sum'
+checker = 'padded'

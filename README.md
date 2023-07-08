@@ -4,18 +4,22 @@
 
 ```txt
 cpl
-├── LICENSE            // MIT license.
+├── LICENSE                        // MIT license.
 ├── README.md
-├── autoload           // Vim script for ddu.vim integration.
-├── denops             // ddu.vim integration (source and kind)
-└── lib                // Library
-    ├── _test_runner
-    │   └── runner.sh  // Shell script to running all tests.
-    ├── _test_util     // Test utility C++ files.
-    ├── [Library Name] // Library name. This is used for item name of ddu.
-    │   ├── index.cpp  // Library body.
-    │   └── test.cpp   // Library test.
-   ...
+├── autoload/                      // Vim script for ddu.vim integration.
+├── denops/                        // ddu.vim integration (source and kind)
+├── lib/
+│   ├── [Library Name]/            // Library name. This is used for item name of ddu.
+│   │   ├── index.cpp              // Library body.
+│   │   ├── info.toml              // Infomation file of this library.
+│   │  ...
+│  ...
+└── tests
+    ├── test_runner.ts             // Excuted by `make test`.
+    ├── generate.rb                // Excuted by `make gen_test`.
+    ├── cases/                     // Test input/output files.
+    ├── checker/                   // Checker scripts for test.
+    └── library-checker-problems/  // Used by generate.rb
 ```
 
 ## ddu.vim integration

@@ -5,26 +5,26 @@
 // [START]
 struct PrimeSieve
 {
-    const uint __size;
+    const uint _max_num;
     vector<int> sieve, primes;
-    PrimeSieve(const int n = 1) : __size(max(1, n)), sieve(max(2, n + 1)) {
+    PrimeSieve(const int max_num = 1) : _max_num(max(1, max_num)), sieve(max(2, max_num + 1)) {
         sieve[0] = sieve[1] = -1;
         primes.emplace_back(2);
-        for (int i = 2; i <= n; i += 2) sieve[i] = 2;
-        for (ll i = 3; i <= n; i += 2) {
+        for (int i = 2; i <= max_num; i += 2) sieve[i] = 2;
+        for (ll i = 3; i <= max_num; i += 2) {
             if (sieve[i]) continue;
             primes.emplace_back(i);
             sieve[i] = i;
-            for (ll j = i * i; j <= n; j += i)
+            for (ll j = i * i; j <= max_num; j += i)
                 if (!sieve[j]) sieve[j] = i;
         }
     }
     inline bool isPrime(const int& x) const {
-        assert((uint)x <= __size);
+        assert((uint)x <= _max_num);
         return sieve[x] == x;
     }
     vector<int> factorize(int x) const {
-        assert((uint)x <= __size);
+        assert((uint)x <= _max_num);
         vector<int> ret;
         if (x < 2) return ret;
         while (x != 1) {
@@ -34,7 +34,7 @@ struct PrimeSieve
         return ret;
     }
     int divisorCount(int x) const {
-        assert((uint)x <= __size);
+        assert((uint)x <= _max_num);
         if (x == 0) return 0;
         int cnt = 1, ret = 1;
         while (x != 1) {
@@ -48,7 +48,7 @@ struct PrimeSieve
         return ret;
     }
     vector<int> divisors(const int x) const {
-        assert((uint)x <= __size);
+        assert((uint)x <= _max_num);
         if (x == 0) return {};
         auto fac = factorize(x);
         vector<int> ret = {1};

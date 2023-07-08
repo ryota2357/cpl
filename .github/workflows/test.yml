@@ -1,0 +1,48 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3'
+
+      - name: Setup Deno
+        uses: denoland/setup-deno@v1
+        with:
+          deno-version: "1.x"
+
+      - name: Setup Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: 'stable'
+
+      - name: Install tools
+        run: go install github.com/jiro4989/textimg@latest
+
+      - name: Test
+        run: make test | tee test_result.txt
+
+      - name: Generate test result
+        run: |
+          mkdir images
+          cat test_result.txt | textimg -o images/test_result.png
+
+      - name: Push test result
+        uses: s0/git-publish-subdir-action@develop
+        env:
+          REPO: self
+          BRANCH: images
+          FOLDER: images
+          SKIP_EMPTY_COMMITS: true
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

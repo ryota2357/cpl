@@ -1,0 +1,6 @@
+name = 'Strongly Connected Components'
+
+[[tests]]
+solver = 'solve.cpp'
+cases = 'strongly_connected_components'
+checker = 'padded'

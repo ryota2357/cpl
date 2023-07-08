@@ -73,6 +73,13 @@ inline T max(const std::vector<T>& v) { return *max_element(v.begin(), v.end());
 
 template <class T>
 inline T min(const std::vector<T>& v) { return *min_element(v.begin(), v.end()); }
+
+template <class F>
+inline constexpr decltype(auto) recursive(F&& f) {
+    return [f = std::forward<F>(f)](auto&&... args) {
+        return f(f, std::forward<decltype(args)>(args)...);
+    };
+}
 }  // namespace ryota2357
 
 using ll = long long;

@@ -12,6 +12,7 @@ RUN pip install --upgrade --no-cache-dir 'pip>=23.1.2'
 
 # Setup Library Checker Problems
 # RUN git clone https://github.com/yosupo06/library-checker-problems.git
-RUN git clone https://github.com/ryota2357/library-checker-problems.git && cd library-checker-problems && git switch patch-1
+RUN git clone https://github.com/ryota2357/library-checker-problems.git
 RUN cd library-checker-problems && \
     pip install -r requirements.txt
+RUN ulimit -s unlimited

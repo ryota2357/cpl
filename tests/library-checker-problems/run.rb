@@ -9,6 +9,8 @@ generate_py = File.join(LIB_CHECKER_PROBS, 'generate.py')
 problems = File.open(File.join(__dir__, 'problems.txt'), 'r').read.split(/\R/).map(&:split)
 
 problems.each do |problem|
+  next if problem[0][0] == '#'
+
   into_toml = File.join(LIB_CHECKER_PROBS, problem[0], 'info.toml')
   result = system("#{generate_py} #{into_toml}")
   unless result

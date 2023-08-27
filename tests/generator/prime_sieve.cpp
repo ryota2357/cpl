@@ -95,7 +95,7 @@ void write_anser(int a, std::ofstream &file) {
 }
 
 void case_small_all(std::filesystem::path basedir) {
-    auto input_file = create_filestream(basedir / "in" / "small_all.in");
+    auto input_file = create_filestream(basedir / "in" / "small_all.txt");
     const auto N_M = 100000;
     input_file << N_M << ' ' << N_M << '\n';
     for (int i = 1; i <= N_M; ++i) {
@@ -104,7 +104,7 @@ void case_small_all(std::filesystem::path basedir) {
     input_file << std::flush;
     input_file.close();
 
-    auto output_file = create_filestream(basedir / "out" / "small_all.out");
+    auto output_file = create_filestream(basedir / "out" / "small_all.txt");
     for (int i = 1; i <= N_M; ++i) {
         write_anser(i, output_file);
     }
@@ -118,7 +118,7 @@ void case_large_random(std::filesystem::path basedir) {
         const auto MAX_M = 100000000;
         auto values = randome_values(number, N, MAX_M / 1000, MAX_M);
 
-        auto input_file = create_filestream(basedir / "in" / ("large_random" + std::to_string(number) + ".in"));
+        auto input_file = create_filestream(basedir / "in" / ("large_random" + std::to_string(number) + ".txt"));
         input_file << N << ' ' << MAX_M << '\n';
         for (auto value : values) {
             input_file << value << ' ';
@@ -126,7 +126,7 @@ void case_large_random(std::filesystem::path basedir) {
         input_file << std::flush;
         input_file.close();
 
-        auto output_file = create_filestream(basedir / "out" / ("large_random" + std::to_string(number) + ".out"));
+        auto output_file = create_filestream(basedir / "out" / ("large_random" + std::to_string(number) + ".txt"));
         for (auto value : values) {
             write_anser(value, output_file);
         }
@@ -140,7 +140,14 @@ int main(int argc, char *argv[]) {
         std::cerr << "You must spesify 1 argument (cases directory)" << std::endl;
         return 1;
     }
-    case_small_all(argv[1]);
-    case_large_random(argv[1]);
+
+    std::filesystem::path basedir = argv[1];
+    if (std::filesystem::exists(basedir)) {
+        std::filesystem::remove_all(basedir);
+    }
+    std::filesystem::create_directories(basedir);
+
+    case_small_all(basedir);
+    case_large_random(basedir);
     return 0;
 }

@@ -15,8 +15,8 @@ test_case_dir = ARGV[4]
 solve_out = compile(compiler, cache_dir, solve_cpp)
 all_ac = true
 ac_count = 0
-Dir.glob(File.join(test_case_dir, 'in', '*.in')).each do |input|
-  out_file = "#{File.join(File.dirname(input, 2), 'out', File.basename(input, '.in'))}.out"
+Dir.glob(File.join(test_case_dir, 'in', '*.txt')).each do |input|
+  out_file = "#{File.join(File.dirname(input, 2), 'out', File.basename(input, '.*'))}.txt"
   expected = File.open(out_file, 'r').read.split
   output = `#{solve_out} < "#{input}"`.split
   if expected.length != output.length

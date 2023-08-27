@@ -20,14 +20,14 @@ def library_checker_problem
   generated_cases_dir = File.join(__dir__, 'library-checker-problems', 'cases')
   cases_dir = File.join(__dir__, 'cases')
 
-  Dir.glob(File.join(generated_cases_dir, '*/{in,out}/*.{in,out}')).each do |file|
+  Dir.glob(File.join(generated_cases_dir, '*', '{*,*.*}')).each do |file_or_dir|
     move_path = File.join(
       cases_dir,
-      Pathname(file).relative_path_from(generated_cases_dir).to_s
+      Pathname(file_or_dir).relative_path_from(generated_cases_dir).to_s
     )
-    move_path_dir = File.dirname(move_path)
-    FileUtils.mkdir_p(move_path_dir) unless Dir.exist?(move_path_dir)
-    FileUtils.mv(file, move_path)
+    FileUtils.rm_r(move_path) if File.exist?(move_path)
+    FileUtils.mkdir_p(File.dirname(move_path))
+    FileUtils.mv(file_or_dir, move_path)
   end
 
   FileUtils.rm_r(generated_cases_dir)

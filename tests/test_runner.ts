@@ -1,8 +1,8 @@
-import { parse } from "https://deno.land/std@0.200.0/toml/mod.ts";
-import { dirname, join } from "https://deno.land/std@0.200.0/path/mod.ts";
-import { exists } from "https://deno.land/std@0.200.0/fs/mod.ts";
-import { ensure, is } from "https://deno.land/x/unknownutil@v3.4.0/mod.ts";
-import { writeAll } from "https://deno.land/std@0.200.0/streams/mod.ts";
+import { parse } from "https://deno.land/std@0.203.0/toml/mod.ts";
+import { dirname, join } from "https://deno.land/std@0.203.0/path/mod.ts";
+import { exists } from "https://deno.land/std@0.203.0/fs/mod.ts";
+import { ensure, is } from "https://deno.land/x/unknownutil@v3.9.0/mod.ts";
+import { writeAll } from "https://deno.land/std@0.203.0/streams/mod.ts";
 
 const libPath = Deno.args[0];
 const textDecoder = new TextDecoder("utf-8");

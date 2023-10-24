@@ -5,7 +5,7 @@
 using WeightedGraph = vector<vector<pair<int, ll>>>;
 vector<ll> dijkstra(const WeightedGraph& graph, int start) {
     vector<ll> cost(graph.size(), INFL);
-    priority_queue<pint, vector<pint>, greater<>> que;
+    priority_queue<pair<ll, int>, vector<pair<ll, int>>, greater<>> que;
     cost[start] = 0;
     que.emplace(0, start);
     while (que.size()) {

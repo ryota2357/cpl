@@ -13,13 +13,13 @@ int main() {
     int n, q; IN(n, q);
     auto tree = SegmentTree<ll, f, 0>(n);
     rep (i, 0, n) {
-        tree.update(i, read());
+        tree[i] = read();
     }
     while (q--) {
         int id = read();
         if (id == 0) {
             int p, x; IN(p, x);
-            tree.update(p, tree.get(p) + x);
+            tree[p] = tree[p] + x;
         } else {
             int l, r; IN(l, r);
             OUT(tree.query(l, r));

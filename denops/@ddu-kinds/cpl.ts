@@ -3,8 +3,8 @@ import {
   Actions,
   BaseKind,
   DduItem,
-} from "https://deno.land/x/ddu_vim@v4.1.0/types.ts";
-import { Denops, fn } from "https://deno.land/x/ddu_vim@v4.1.0/deps.ts";
+} from "https://deno.land/x/ddu_vim@v4.1.1/types.ts";
+import { Denops, fn } from "https://deno.land/x/ddu_vim@v4.1.1/deps.ts";
 import { ActionData } from "../@ddu-sources/cpl.ts";
 
 type Params = Record<never, never>;
